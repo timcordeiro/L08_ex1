@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <title>About Me</title>
+</head>
+<body>
+    <h1 style="text-align:center" class="title">About Me</h1>
+</br>
+<div class="flexbox-container" style="display:flex;">
+    <div class="sidebar" style="flex:1;margin-left: 120px;">
+        <img style="height: 400px; margin-left: 100px;" src="images/image_c219.jpg" alt="image of self">  </div>
+    <div class="main" style="flex:1; margin-top: 200px;">
+    <b class="name">Timothy Cordeiro</b>
+    <br>
+    <b class="age"></b>
+    <b>years old</b>
+    <p style="margin-right: 50px;" class="description"> My name is Timothy, and I am currently a year 2 student at 
+        Republic Polytechnic in the School of Infocomm, Digital 
+        Design and Development(SOI, DDDD).</p>
+        <div class="controls">
+            <button class="play">Play</button>
+            <button class="pause">Pause</button>
+        </div>
+</div>
+<script>
+// anime({
+//   targets: '.sidebar',
+//   translateX: [-400, 0],
+//   scale: 1,
+//   rotate: '1turn',
+// });
+
+// anime({
+// targets: '.sidebar',
+// translateY: [-500, 0],
+// rotate: 360,
+// delay: anime.stagger(-300, {start: 1000}),
+// direction: 'alternate'
+// });
+
+anime({
+  targets: '.title',
+  translateX: [-550, 0],
+  easing: 'easeInOutExpo',
+  opacity:[0, 1]
+});
+
+anime({
+  targets: '.name',
+  translateX: [-550, 0],
+  easing: 'easeInOutExpo',
+  opacity:[0, 1]
+});
+
+anime({
+  targets: '.description',
+  translateX: [-550, 0],
+  easing: 'easeInOutExpo',
+  opacity:[0, 1]
+});
+
+anime({
+targets: '.age',
+translateX: [-550, 0],
+innerHTML: [0, 19], //start and end values
+easing: 'linear',
+round: 1, //rounds off to zero decimal places 
+duration: 1000
+});
+
+var animation = anime({
+targets: '.sidebar',
+translateY: [-500, 0],
+rotate: 360,
+delay: anime.stagger(-300, {start: 1000}),
+// direction: 'alternate'
+delay: function(el, i) { return i * 100; },
+loop: false,
+autoplay: true,
+easing: 'easeInOutSine'
+});
+
+document.querySelector('.play').onclick = animation.play;
+document.querySelector('.pause').onclick = animation.pause;
+</script>
+    
+</body>
+</html>
